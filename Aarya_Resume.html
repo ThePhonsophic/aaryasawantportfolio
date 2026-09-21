@@ -398,9 +398,11 @@
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
       gap: 16px;
       margin-top: 32px;
+      flex-wrap: nowrap;
     }
 
     .btn-f1-primary {
@@ -854,8 +856,8 @@
 
     .grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-      gap: 30px; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 28px; 
     }
 
     .card { 
@@ -1366,8 +1368,8 @@
 
     .skills-wrapper { 
       display: grid; 
-      grid-template-columns: repeat(4, 1fr); 
-      gap: 16px; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px; 
     }
 
     .skill-card {
@@ -1465,8 +1467,8 @@
     /* ACHIEVEMENTS CARDS */
     .achievements-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
     }
 
     .achievement-card { 
@@ -1605,7 +1607,7 @@
     /* CONTACT SECTION */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       margin-top: 30px;
     }
@@ -2504,6 +2506,209 @@
       box-shadow: 0 4px 16px rgba(255, 0, 0, 0.5);
     }
 
+
+    /* ==========================================================
+       SYMMETRICAL, ZERO-ORPHAN CARD GRID ARCHITECTURE
+       ========================================================== */
+
+    /* 1. KEY ACHIEVEMENTS (4 Cards: 4 across or 2x2, NEVER 3+1) */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    @media (max-width: 1120px) {
+      .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+    @media (max-width: 620px) {
+      .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    /* 2. ENGINEERING PROJECTS (4 Projects: 2x2, NEVER 3+1) */
+    .grid,
+    #projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 768px) {
+      .grid,
+      #projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    #projects-grid .card:only-child {
+      grid-column: 1 / -1;
+      max-width: 640px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* 3. SKILLS WRAPPER (3 Cards: 3 across on desktop, 1 stacked on mobile) */
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 960px) {
+      .skills-wrapper {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    /* 4. VERIFIED CERTIFICATIONS (5 Cards: Row 1 = 3 cards, Row 2 = 2 cards, 100% full width, ZERO orphans) */
+    .cert-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+    .cert-tile:nth-child(1),
+    .cert-tile:nth-child(2),
+    .cert-tile:nth-child(3) {
+      grid-column: span 2;
+    }
+    .cert-tile:nth-child(4),
+    .cert-tile:nth-child(5) {
+      grid-column: span 3;
+    }
+    @media (max-width: 960px) {
+      .cert-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .cert-tile:nth-child(n) {
+        grid-column: auto;
+      }
+    }
+
+    /* 5. ACADEMIC EDUCATION (2 Cards: 2 across on desktop, 1 stacked on mobile) */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    /* 6. CONTACT GRID (3 Cards: 3 across on desktop, 1 stacked on mobile) */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 860px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+    /* 7. SPEC GRID ABOUT (4 Cards: 2x2, 1 stacked on small mobile) */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 520px) {
+      .spec-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    /* MOBILE NAVIGATION DRAWER */
+    .mobile-menu-toggle {
+      display: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .mobile-menu-toggle:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: rgba(7, 8, 10, 0.98);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 22px 6%;
+        gap: 10px;
+        display: none;
+        max-height: calc(100vh - 65px);
+        overflow-y: auto;
+        z-index: 999;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links a {
+        padding: 11px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        width: 100%;
+        font-size: 0.95rem;
+      }
+      .nav-resume-btn {
+        margin-left: 0;
+        justify-content: center;
+        margin-top: 8px;
+        width: 100%;
+      }
+      .hero-actions {
+        flex-direction: row;
+        gap: 12px;
+      }
+      .btn-f1-primary,
+      .btn-f1-secondary {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+      section {
+        padding: 70px 5%;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-f1-primary,
+      .btn-f1-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+      h1 {
+        font-size: clamp(2.6rem, 12vw, 3.4rem);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2550,7 +2755,11 @@
       <img src="image.png" alt="AARYA.F1" class="nav-brand-logo">
     </a>
     
-    <div class="nav-links">
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+      <i data-lucide="menu"></i>
+    </button>
+    
+    <div class="nav-links" id="nav-links">
       <a href="#about"><i data-lucide="user"></i> About</a>
       <a href="#experience"><i data-lucide="briefcase"></i> Experience</a>
       <a href="#education"><i data-lucide="graduation-cap"></i> Education</a>
@@ -2585,11 +2794,8 @@
         <a href="#projects" class="btn-f1-primary">
           <i data-lucide="gauge"></i> <span>View Telemetry & CAD</span>
         </a>
-        <a href="Aarya Resume.pdf" download="Aarya_Sanjay_Sawant_Resume.pdf" class="btn-f1-outline" target="_blank">
+        <a href="Aarya Resume.pdf" download="Aarya_Sanjay_Sawant_Resume.pdf" class="btn-f1-secondary" target="_blank">
           <i data-lucide="file-down"></i> <span>Download Resume (PDF)</span>
-        </a>
-        <a href="#contact" class="btn-f1-secondary">
-          <i data-lucide="mail"></i> <span>Direct Contact</span>
         </a>
       </div>
 
@@ -3374,6 +3580,26 @@
 
   <!-- TELEMETRY & FILTERING JAVASCRIPT -->
   <script>
+
+    // Mobile Navigation Drawer Toggle
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const navLinksMenu = document.getElementById('nav-links');
+    if (mobileToggle && navLinksMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navLinksMenu.classList.toggle('active');
+        const isOpen = navLinksMenu.classList.contains('active');
+        mobileToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      });
+      navLinksMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinksMenu.classList.remove('active');
+          mobileToggle.innerHTML = '<i data-lucide="menu"></i>';
+          lucide.createIcons();
+        });
+      });
+    }
+
     // Initialize Lucide Icons
     lucide.createIcons();
 
