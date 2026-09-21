@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 540" width="100%" height="100%">
+  <defs>
+    <!-- Gradients for Ferrari Rosso Corsa bodywork -->
+    <linearGradient id="ferrari-body" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b00010" />
+      <stop offset="18%" stop-color="#e80020" />
+      <stop offset="50%" stop-color="#ff2233" />
+      <stop offset="82%" stop-color="#e80020" />
+      <stop offset="100%" stop-color="#b00010" />
+    </linearGradient>
+    
+    <linearGradient id="carbon-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#101216" />
+      <stop offset="50%" stop-color="#1f232b" />
+      <stop offset="100%" stop-color="#101216" />
+    </linearGradient>
+
+    <linearGradient id="tire-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#181a1f" />
+      <stop offset="25%" stop-color="#2d323b" />
+      <stop offset="75%" stop-color="#2d323b" />
+      <stop offset="100%" stop-color="#14161a" />
+    </linearGradient>
+
+    <linearGradient id="rear-wing-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e80020" />
+      <stop offset="100%" stop-color="#900008" />
+    </linearGradient>
+
+    <!-- DRS & Exhaust Heat Glow -->
+    <radialGradient id="exhaust-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6600" stop-opacity="0.9" />
+      <stop offset="60%" stop-color="#ff0022" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="car-shadow" x="-30%" y="-20%" width="160%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+  </defs>
+
+  <g filter="url(#car-shadow)">
+    <!-- 1. VENTURI FLOOR & CARBON CHASSIS UNDERBODY -->
+    <!-- Floor edges & rear diffuser -->
+    <path d="M 52 230 
+             C 44 260, 40 310, 42 370 
+             L 38 410 
+             L 54 445 
+             L 84 465 
+             L 116 465 
+             L 146 445 
+             L 162 410 
+             L 158 370 
+             C 160 310, 156 260, 148 230 
+             Z" 
+          fill="url(#carbon-grad)" stroke="#2b313d" stroke-width="1.2" />
+
+    <!-- Floor edge aerodynamic strakes (ground-effect vanes) -->
+    <path d="M 43 280 L 37 320 L 40 365 L 43 365 L 40 322 L 45 280 Z" fill="#ffdd00" />
+    <path d="M 157 280 L 163 320 L 160 365 L 157 365 L 160 322 L 155 280 Z" fill="#ffdd00" />
+    
+    <!-- Underfloor venturi exit tunnels (diffuser channels) -->
+    <line x1="72" y1="440" x2="68" y2="465" stroke="#3a4252" stroke-width="1.5" />
+    <line x1="88" y1="442" x2="86" y2="465" stroke="#3a4252" stroke-width="1.5" />
+    <line x1="112" y1="442" x2="114" y2="465" stroke="#3a4252" stroke-width="1.5" />
+    <line x1="128" y1="440" x2="132" y2="465" stroke="#3a4252" stroke-width="1.5" />
+
+    <!-- 2. WHEELS & TIRES WITH PIRELLI ROSSO STRIPES -->
+    <!-- Front Left Wheel -->
+    <g id="front-left-wheel">
+      <rect x="14" y="98" width="28" height="74" rx="7" fill="url(#tire-grad)" stroke="#111317" stroke-width="1.5" />
+      <!-- Pirelli Red soft-compound rim ring -->
+      <line x1="28" y1="102" x2="28" y2="168" stroke="#ff1801" stroke-width="2.5" stroke-dasharray="8 6" />
+      <!-- Carbon brake duct & wheel cover -->
+      <rect x="22" y="112" width="12" height="46" rx="3" fill="#15171d" stroke="#303744" stroke-width="0.8" />
+    </g>
+
+    <!-- Front Right Wheel -->
+    <g id="front-right-wheel">
+      <rect x="158" y="98" width="28" height="74" rx="7" fill="url(#tire-grad)" stroke="#111317" stroke-width="1.5" />
+      <line x1="172" y1="102" x2="172" y2="168" stroke="#ff1801" stroke-width="2.5" stroke-dasharray="8 6" />
+      <rect x="166" y="112" width="12" height="46" rx="3" fill="#15171d" stroke="#303744" stroke-width="0.8" />
+    </g>
+
+    <!-- Rear Left Wheel (wider 35px F1 slick) -->
+    <g id="rear-left-wheel">
+      <rect x="8" y="380" width="34" height="84" rx="8" fill="url(#tire-grad)" stroke="#111317" stroke-width="1.5" />
+      <line x1="25" y1="384" x2="25" y2="460" stroke="#ff1801" stroke-width="3" stroke-dasharray="9 7" />
+      <rect x="18" y="396" width="14" height="52" rx="3" fill="#15171d" stroke="#303744" stroke-width="0.8" />
+    </g>
+
+    <!-- Rear Right Wheel (wider 35px F1 slick) -->
+    <g id="rear-right-wheel">
+      <rect x="158" y="380" width="34" height="84" rx="8" fill="url(#tire-grad)" stroke="#111317" stroke-width="1.5" />
+      <line x1="175" y1="384" x2="175" y2="460" stroke="#ff1801" stroke-width="3" stroke-dasharray="9 7" />
+      <rect x="168" y="396" width="14" height="52" rx="3" fill="#15171d" stroke="#303744" stroke-width="0.8" />
+    </g>
+
+    <!-- 3. SUSPENSION WISHBONES -->
+    <!-- Front Left Suspension (Push-rod) -->
+    <line x1="42" y1="120" x2="86" y2="148" stroke="#121418" stroke-width="2.6" />
+    <line x1="42" y1="150" x2="88" y2="168" stroke="#121418" stroke-width="2.6" />
+    <line x1="42" y1="130" x2="87" y2="155" stroke="#8892a0" stroke-width="1" /> <!-- Track rod -->
+
+    <!-- Front Right Suspension (Push-rod) -->
+    <line x1="158" y1="120" x2="114" y2="148" stroke="#121418" stroke-width="2.6" />
+    <line x1="158" y1="150" x2="112" y2="168" stroke="#121418" stroke-width="2.6" />
+    <line x1="158" y1="130" x2="113" y2="155" stroke="#8892a0" stroke-width="1" />
+
+    <!-- Rear Left Suspension (Pull-rod & halfshaft) -->
+    <line x1="42" y1="405" x2="86" y2="428" stroke="#121418" stroke-width="2.6" />
+    <line x1="42" y1="438" x2="88" y2="450" stroke="#121418" stroke-width="2.6" />
+
+    <!-- Rear Right Suspension (Pull-rod & halfshaft) -->
+    <line x1="158" y1="405" x2="114" y2="428" stroke="#121418" stroke-width="2.6" />
+    <line x1="158" y1="438" x2="112" y2="450" stroke="#121418" stroke-width="2.6" />
+
+    <!-- 4. FRONT WING ASSEMBLY (Curved multi-tier front aero) -->
+    <!-- Mainplane -->
+    <path d="M 12 60 
+             C 50 48, 80 44, 100 44 
+             C 120 44, 150 48, 188 60 
+             L 186 78 
+             C 148 68, 118 64, 100 64 
+             C 82 64, 52 68, 14 78 
+             Z" 
+          fill="#d00018" stroke="#900010" stroke-width="1" />
+    
+    <!-- Secondary Flap with Italian Tricolore / Modena line -->
+    <path d="M 16 52 
+             C 50 42, 80 38, 100 38 
+             C 120 38, 150 42, 184 52 
+             L 182 60 
+             C 148 50, 118 46, 100 46 
+             C 82 46, 52 50, 18 60 
+             Z" 
+          fill="#ff2233" />
+    <path d="M 22 46 C 60 36, 140 36, 178 46 L 176 50 C 140 40, 60 40, 24 50 Z" fill="#ffffff" />
+    
+    <!-- Front Wing Endplates -->
+    <path d="M 10 38 L 18 38 L 16 84 L 8 84 Z" fill="url(#carbon-grad)" stroke="#2b313d" stroke-width="0.8" />
+    <path d="M 182 38 L 190 38 L 192 84 L 184 84 Z" fill="url(#carbon-grad)" stroke="#2b313d" stroke-width="0.8" />
+    <!-- Outer dive planes -->
+    <line x1="8" y1="50" x2="4" y2="70" stroke="#ffdd00" stroke-width="1.6" />
+    <line x1="192" y1="50" x2="196" y2="70" stroke="#ffdd00" stroke-width="1.6" />
+
+    <!-- 5. MAIN CHASSIS & SCUDERIA FERRARI BODYWORK -->
+    <!-- Nosecone tapering down to the front wing -->
+    <path d="M 94 40 
+             C 94 34, 106 34, 106 40 
+             L 109 130 
+             L 114 175 
+             L 86 175 
+             L 91 130 
+             Z" 
+          fill="url(#ferrari-body)" stroke="#80000a" stroke-width="1" />
+    
+    <!-- Ferrari nosecone shield badge -->
+    <path d="M 97 78 L 103 78 L 103 86 L 100 89 L 97 86 Z" fill="#ffdd00" stroke="#111" stroke-width="0.5" />
+    <circle cx="100" cy="83" r="1.5" fill="#111" />
+    
+    <!-- Driver Car Number #16 in official font -->
+    <text x="100" y="118" font-family="'Formula1-Wide', 'Kanit', sans-serif" font-weight="900" font-style="italic" font-size="12" fill="#ffffff" text-anchor="middle">16</text>
+
+    <!-- Sidepods & Engine Cover Sculpture (Coke-bottle bottle contour) -->
+    <path d="M 86 175 
+             C 76 182, 58 195, 52 230 
+             C 48 255, 48 305, 54 340 
+             C 60 375, 72 415, 86 438 
+             L 114 438 
+             C 128 415, 140 375, 146 340 
+             C 152 305, 152 255, 148 230 
+             C 142 195, 124 182, 114 175 
+             Z" 
+          fill="url(#ferrari-body)" stroke="#700008" stroke-width="1.2" />
+
+    <!-- Sidepod radiator cooling gill louvres (Left & Right) -->
+    <g stroke="#1a0003" stroke-width="1.4" opacity="0.75">
+      <line x1="62" y1="260" x2="74" y2="256" />
+      <line x1="61" y1="272" x2="74" y2="268" />
+      <line x1="60" y1="284" x2="74" y2="280" />
+      <line x1="60" y1="296" x2="73" y2="292" />
+      <line x1="61" y1="308" x2="73" y2="304" />
+      <line x1="63" y1="320" x2="74" y2="316" />
+
+      <line x1="138" y1="260" x2="126" y2="256" />
+      <line x1="139" y1="272" x2="126" y2="268" />
+      <line x1="140" y1="284" x2="126" y2="280" />
+      <line x1="140" y1="296" x2="127" y2="292" />
+      <line x1="139" y1="308" x2="127" y2="304" />
+      <line x1="137" y1="320" x2="126" y2="316" />
+    </g>
+
+    <!-- Scuderia Yellow Speed Accent Stripes -->
+    <path d="M 54 235 C 50 265, 50 310, 56 345 L 59 345 C 53 310, 53 265, 57 235 Z" fill="#ffdd00" />
+    <path d="M 146 235 C 150 265, 150 310, 144 345 L 141 345 C 147 310, 147 265, 143 235 Z" fill="#ffdd00" />
+
+    <!-- 6. COCKPIT, DRIVER HELMET & TITANIUM HALO -->
+    <!-- Cockpit Opening -->
+    <ellipse cx="100" cy="225" rx="14" ry="24" fill="#0d0e12" stroke="#2a303c" stroke-width="1.5" />
+    
+    <!-- Driver Red Racing Helmet with Visor -->
+    <ellipse cx="100" cy="232" rx="8" ry="10" fill="#e80020" stroke="#ffffff" stroke-width="1" />
+    <path d="M 94 228 Q 100 225 106 228 Q 105 233 100 234 Q 95 233 94 228 Z" fill="#111317" stroke="#ffdd00" stroke-width="0.8" />
+    
+    <!-- Halo Safety Structure (Three-legged wishbone) -->
+    <!-- Central Pylon -->
+    <line x1="100" y1="195" x2="100" y2="218" stroke="#181a20" stroke-width="4.5" stroke-linecap="round" />
+    <line x1="100" y1="195" x2="100" y2="218" stroke="#e80020" stroke-width="2" stroke-linecap="round" />
+    <!-- Halo Ring -->
+    <path d="M 86 242 
+             C 84 210, 88 194, 100 194 
+             C 112 194, 116 210, 114 242" 
+          fill="none" stroke="#121418" stroke-width="5.5" stroke-linecap="round" />
+    <path d="M 86 242 
+             C 84 210, 88 194, 100 194 
+             C 112 194, 116 210, 114 242" 
+          fill="none" stroke="#2a2e38" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- 7. AIRBOX INTAKE & SHARK FIN ENGINE COVER -->
+    <!-- Engine air intake scoop -->
+    <path d="M 93 255 L 107 255 L 105 267 L 95 267 Z" fill="#090a0d" stroke="#333a46" stroke-width="1" />
+    <!-- On-board T-Cam (Fluorescent Yellow) -->
+    <rect x="96" y="251" width="8" height="4" rx="1.5" fill="#ffff00" stroke="#111" stroke-width="0.6" />
+
+    <!-- Dorsal Shark Fin extending to rear wing -->
+    <path d="M 99 267 L 101 267 L 101 415 L 99 415 Z" fill="#ffffff" />
+    <path d="M 99.5 285 L 100.5 285 L 100.5 410 L 99.5 410 Z" fill="#e80020" />
+
+    <!-- 8. EXHAUST & REAR PACKAGING -->
+    <!-- Exhaust pipe exit -->
+    <circle cx="100" cy="426" r="5" fill="#1b1e24" stroke="#485264" stroke-width="1" />
+    <circle cx="100" cy="426" r="3.5" fill="url(#exhaust-glow)" />
+
+    <!-- 9. REAR WING ASSEMBLY -->
+    <!-- Beam Wing -->
+    <rect x="65" y="446" width="70" height="8" rx="2" fill="url(#carbon-grad)" stroke="#2b313d" stroke-width="1" />
+
+    <!-- Rear Wing Mainplane (Bold Ferrari Red) -->
+    <rect x="44" y="468" width="112" height="22" rx="3" fill="url(#rear-wing-grad)" stroke="#700008" stroke-width="1.2" />
+    
+    <!-- White Scuderia Ferrari rear sponsor bar -->
+    <rect x="52" y="473" width="96" height="12" rx="1.5" fill="#ffffff" />
+    <!-- 'FERRARI' rear wing text in racing wide style -->
+    <text x="100" y="482.5" font-family="'Formula1-Wide', 'Kanit', sans-serif" font-weight="900" font-style="italic" font-size="7.5" fill="#000000" letter-spacing="1.5" text-anchor="middle">FERRARI</text>
+
+    <!-- DRS Actuator Pod (Central carbon pod) -->
+    <rect x="96" y="462" width="8" height="12" rx="2" fill="#15171c" stroke="#ffdd00" stroke-width="1" />
+
+    <!-- Rear Wing Endplates -->
+    <rect x="42" y="454" width="4" height="42" rx="1.5" fill="#e80020" stroke="#111" stroke-width="0.8" />
+    <rect x="154" y="454" width="4" height="42" rx="1.5" fill="#e80020" stroke="#111" stroke-width="0.8" />
+
+    <!-- FIA Red Safety Rain Light (flashing beacon at trailing edge) -->
+    <rect x="97" y="488" width="6" height="5" rx="1" fill="#ff0022" stroke="#ffffff" stroke-width="0.6" />
+  </g>
+</svg>

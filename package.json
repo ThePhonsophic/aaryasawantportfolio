@@ -1,0 +1,21 @@
+{
+  "name": "aarya-sawant-portfolio",
+  "version": "1.0.0",
+  "description": "F1 Mechanical Engineer & CAD Specialist Portfolio - Aarya Sanjay Sawant",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "deploy": "npx vercel --prod"
+  },
+  "keywords": [
+    "mechanical-engineering",
+    "motorsport",
+    "formula-1",
+    "cad-solidworks",
+    "ansys-fea",
+    "portfolio"
+  ],
+  "author": "Aarya Sanjay Sawant",
+  "license": "MIT"
+}
