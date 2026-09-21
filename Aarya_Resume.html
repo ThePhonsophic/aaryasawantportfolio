@@ -347,7 +347,7 @@
       z-index: 2;
       text-align: left;
       padding: 0 8%;
-      max-width: 750px;
+      max-width: 900px;
     }
 
     .hero p.tagline {
@@ -409,24 +409,26 @@
       font-family: var(--font-racing);
       font-weight: 800;
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 0.94rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.8px;
       background: linear-gradient(135deg, #ff2800 0%, #d40000 60%, #990000 100%);
       color: #fff;
-      padding: 14px 32px 14px 26px;
+      padding: 11px 22px 11px 18px;
       border-radius: 0;
       transform: skewX(-14deg);
       border: 1px solid rgba(255, 255, 255, 0.25);
-      border-left: 5px solid #ffffff;
+      border-left: 4px solid #ffffff;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(255, 40, 0, 0.4);
+      box-shadow: 0 4px 16px rgba(255, 40, 0, 0.35);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap !important;
+      flex-shrink: 0;
     }
 
     .btn-f1-primary > * {
@@ -467,25 +469,27 @@
       font-family: var(--font-racing);
       font-weight: 700;
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 0.94rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.8px;
       background: rgba(14, 17, 23, 0.9);
       color: #fff;
-      padding: 14px 30px 14px 24px;
+      padding: 11px 20px 11px 16px;
       border-radius: 0;
       transform: skewX(-14deg);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      border-left: 5px solid var(--accent);
+      border-left: 4px solid var(--accent);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(10px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap !important;
+      flex-shrink: 0;
     }
 
     .btn-f1-secondary > * {
@@ -2706,6 +2710,388 @@
       }
       h1 {
         font-size: clamp(2.6rem, 12vw, 3.4rem);
+      }
+    }
+
+
+    /* SLEEK REDUCED BUTTON SIZE & SINGLE-LINE TEXT ENFORCEMENT */
+    .hero-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .btn-f1-primary,
+    .btn-f1-secondary {
+      white-space: nowrap !important;
+      flex-shrink: 0;
+    }
+    .btn-f1-primary > *,
+    .btn-f1-secondary > *,
+    .btn-f1-primary span,
+    .btn-f1-secondary span {
+      white-space: nowrap !important;
+      display: inline-block;
+    }
+    .btn-f1-primary i,
+    .btn-f1-secondary i {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 560px) {
+      .hero-actions {
+        gap: 10px;
+      }
+      .btn-f1-primary,
+      .btn-f1-secondary {
+        padding: 10px 15px 10px 12px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        white-space: nowrap !important;
+      }
+      .btn-f1-primary i,
+      .btn-f1-secondary i {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    @media (max-width: 420px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+      }
+      .btn-f1-primary,
+      .btn-f1-secondary {
+        width: 100%;
+        justify-content: center;
+        white-space: nowrap !important;
+      }
+    }
+
+
+    /* SLEEK REDUCED BUTTON SIZE & SINGLE-LINE TEXT ENFORCEMENT */
+    .hero-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .btn-f1-primary,
+    .btn-f1-secondary {
+      white-space: nowrap !important;
+      flex-shrink: 0;
+    }
+    .btn-f1-primary > *,
+    .btn-f1-secondary > *,
+    .btn-f1-primary span,
+    .btn-f1-secondary span {
+      white-space: nowrap !important;
+      display: inline-block;
+    }
+    .btn-f1-primary i,
+    .btn-f1-secondary i {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 560px) {
+      .hero-actions {
+        gap: 10px;
+      }
+      .btn-f1-primary,
+      .btn-f1-secondary {
+        padding: 10px 15px 10px 12px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        white-space: nowrap !important;
+      }
+      .btn-f1-primary i,
+      .btn-f1-secondary i {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    @media (max-width: 420px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+      }
+      .btn-f1-primary,
+      .btn-f1-secondary {
+        width: 100%;
+        justify-content: center;
+        white-space: nowrap !important;
+      }
+    }
+
+
+    /* ==========================================================
+       MOBILE TEXT SAFETY — NO CROPPING ON ANY DEVICE
+       Covers: 320px (Galaxy Fold) up to 768px (tablet/iPad)
+       ========================================================== */
+
+    /* GLOBAL OVERFLOW PROTECTION */
+    html, body {
+      overflow-x: hidden;
+      word-break: break-word;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    p, li, h1, h2, h3, h4, h5, span, a, div {
+      max-width: 100%;
+    }
+
+    /* HERO — SHRINKS SMOOTHLY ON NARROW SCREENS */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 0 5%;
+        max-width: 100%;
+      }
+      h1 {
+        font-size: clamp(2.4rem, 11vw, 3.2rem);
+        line-height: 0.96;
+        letter-spacing: -0.5px;
+      }
+      .hero p.desc {
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+      .hero p.tagline {
+        font-size: 0.78rem;
+        letter-spacing: 2px;
+      }
+    }
+
+    /* SECTION PADDING */
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 5%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+    }
+    @media (max-width: 480px) {
+      section {
+        padding: 48px 4%;
+      }
+      h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+    }
+
+    /* SECTION HEADER TAGS — PREVENT OVERFLOW */
+    @media (max-width: 480px) {
+      .section-telemetry-tag {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+    }
+
+    /* TIMELINE CARDS */
+    @media (max-width: 768px) {
+      .timeline-box h4 {
+        font-size: 1rem;
+        word-break: break-word;
+      }
+      .timeline-role {
+        font-size: 0.85rem;
+      }
+      .timeline-box p {
+        font-size: 0.87rem;
+        line-height: 1.6;
+      }
+    }
+
+    /* EDUCATION CARDS */
+    @media (max-width: 768px) {
+      .education-degree {
+        font-size: 1.05rem;
+        line-height: 1.3;
+        word-break: break-word;
+      }
+      .education-institute {
+        font-size: 0.88rem;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .education-activity-text {
+        font-size: 0.84rem;
+        line-height: 1.55;
+      }
+    }
+
+    /* ACHIEVEMENT CARDS */
+    @media (max-width: 768px) {
+      .achievement-card {
+        padding: 20px;
+      }
+      .achievement-title {
+        font-size: 0.92rem;
+        line-height: 1.35;
+        word-break: break-word;
+      }
+      .achievement-card p {
+        font-size: 0.83rem;
+        line-height: 1.55;
+      }
+    }
+
+    /* SKILL CARDS */
+    @media (max-width: 768px) {
+      .skill-card {
+        padding: 16px 14px;
+      }
+      .skill-card h3 {
+        font-size: 0.92rem;
+      }
+      .skill-card li {
+        font-size: 0.82rem;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      .skill-status-tag {
+        font-size: 0.62rem;
+        padding: 2px 5px;
+      }
+    }
+
+    /* CERTIFICATIONS TILES */
+    @media (max-width: 768px) {
+      .cert-tile {
+        padding: 18px;
+      }
+      .cert-tile-title {
+        font-size: 0.95rem;
+        line-height: 1.35;
+        word-break: break-word;
+      }
+      .cert-id-tag {
+        font-size: 0.68rem;
+        word-break: break-all;
+      }
+      .cert-issuer-badge {
+        font-size: 0.64rem;
+      }
+    }
+
+    /* PROJECT CARDS */
+    @media (max-width: 768px) {
+      .card-body {
+        padding: 16px;
+      }
+      .card-body h3 {
+        font-size: 0.98rem;
+        line-height: 1.35;
+        word-break: break-word;
+      }
+      .card-body p {
+        font-size: 0.83rem;
+        line-height: 1.55;
+      }
+      .tags {
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .tag {
+        font-size: 0.68rem;
+        padding: 3px 7px;
+      }
+    }
+
+    /* CONTACT CARDS */
+    @media (max-width: 768px) {
+      .contact-card {
+        padding: 18px;
+        gap: 14px;
+      }
+      .contact-value {
+        font-size: 0.82rem;
+        word-break: break-all;
+      }
+      .contact-label {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* PUBLICATIONS */
+    @media (max-width: 768px) {
+      .publication-card h4 {
+        font-size: 0.96rem;
+        line-height: 1.4;
+        word-break: break-word;
+      }
+      .pub-badge-row {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pub-conf-name {
+        font-size: 0.78rem;
+      }
+      .pub-accepted-badge {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* ABOUT SECTION SPEC CARDS */
+    @media (max-width: 480px) {
+      .spec-card-num {
+        font-size: 1.05rem;
+        word-break: break-word;
+      }
+      .spec-card-label {
+        font-size: 0.72rem;
+        line-height: 1.4;
+      }
+    }
+
+    /* MARQUEE OVERFLOW SAFE */
+    .marquee-container {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* NAV ON SMALL SCREENS */
+    @media (max-width: 380px) {
+      nav {
+        padding: 10px 4%;
+      }
+      .nav-ferrari-shield {
+        height: 24px;
+        width: 24px;
+      }
+      .nav-brand-logo {
+        height: 16px;
+        max-width: 150px;
+      }
+    }
+
+    /* FOOTER */
+    @media (max-width: 480px) {
+      .footer-content {
+        padding: 20px 4%;
+        gap: 12px;
+      }
+      .footer-brand-name {
+        font-size: 0.78rem;
       }
     }
 
