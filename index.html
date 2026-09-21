@@ -2129,6 +2129,381 @@
       .nav-brand-logo { height: 19px; max-width: 190px; }
       .footer-brand-logo { height: 19px; max-width: 190px; }
     }
+
+    /* HERO RESUME BUTTON */
+    .btn-f1-outline {
+      font-family: var(--font-racing);
+      font-weight: 700;
+      font-style: italic;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      padding: 14px 30px 14px 24px;
+      border-radius: 0;
+      transform: skewX(-14deg);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-left: 5px solid #00f0ff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-f1-outline > * {
+      transform: skewX(14deg);
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-f1-outline:hover {
+      transform: skewX(-14deg) translateY(-3px);
+      background: rgba(0, 240, 255, 0.15);
+      border-color: #00f0ff;
+      box-shadow: 0 8px 24px rgba(0, 240, 255, 0.35);
+      color: #fff;
+    }
+
+    /* NAV RESUME BUTTON */
+    .nav-resume-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff !important;
+      font-family: var(--font-telemetry);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 8px 14px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+      margin-left: 6px;
+    }
+    .nav-resume-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff !important;
+      box-shadow: 0 4px 15px rgba(255, 40, 0, 0.45);
+    }
+    .nav-resume-btn::after { display: none !important; }
+
+    /* EDUCATION SECTION STYLES */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+    }
+    .education-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid var(--accent);
+      background: linear-gradient(180deg, rgba(20, 24, 34, 0.95) 0%, rgba(11, 14, 20, 0.95) 100%);
+    }
+    .education-card:hover {
+      border-color: rgba(255, 40, 0, 0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+    .education-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .education-degree {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+    .education-institute {
+      font-family: var(--font-body);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 8px 0 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .education-date-badge {
+      font-family: var(--font-telemetry);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #8c97aa;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .education-body {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .education-activity-tag {
+      font-family: var(--font-telemetry);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #8c97aa;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .education-activity-text {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #d1d6e0;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* CERTIFICATIONS DEDICATED CARDS */
+    .certifications-section-wrap {
+      margin-top: 60px;
+    }
+    .certifications-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .certifications-title-row h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      font-style: italic;
+      text-transform: uppercase;
+      margin: 0;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cert-count-pill {
+      font-family: var(--font-telemetry);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(255, 40, 0, 0.12);
+      border: 1px solid rgba(255, 40, 0, 0.3);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .cert-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .cert-tile {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .cert-tile:hover {
+      border-color: rgba(255, 40, 0, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .cert-tile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .cert-issuer-badge {
+      font-family: var(--font-telemetry);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #00f0ff;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 3px 8px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .cert-tile-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+    }
+    .cert-id-tag {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: #8c97aa;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .cert-verify-btn {
+      margin-top: auto;
+      font-family: var(--font-telemetry);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(255, 40, 0, 0.08);
+      border: 1px solid rgba(255, 40, 0, 0.25);
+      padding: 7px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .cert-verify-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(255, 40, 0, 0.35);
+    }
+    .cert-verified-static {
+      margin-top: auto;
+      font-family: var(--font-telemetry);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #00e676;
+      background: rgba(0, 230, 118, 0.08);
+      border: 1px solid rgba(0, 230, 118, 0.25);
+      padding: 7px 12px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ROBOCAR INTERACTIVE VIEWPORT */
+    .robocar-viewport-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at center, rgba(16, 26, 46, 0.85) 0%, rgba(6, 9, 14, 0.96) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    .card:hover .robocar-viewport-bg {
+      background: radial-gradient(circle at center, rgba(24, 38, 68, 0.9) 0%, rgba(6, 9, 14, 0.98) 100%);
+    }
+    .robocar-radar-ring {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border: 1px dashed rgba(0, 240, 255, 0.35);
+      border-radius: 50%;
+      animation: spinRadar 12s linear infinite;
+    }
+    .robocar-radar-pulse {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 1px solid rgba(255, 40, 0, 0.4);
+      border-radius: 50%;
+      animation: pulseRadar 2.4s ease-out infinite;
+    }
+    @keyframes spinRadar {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulseRadar {
+      0% { transform: scale(0.6); opacity: 0.9; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+    .robocar-center-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 40, 0, 0.15);
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff3c1a;
+      z-index: 3;
+      box-shadow: 0 0 24px rgba(255, 40, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+    .card:hover .robocar-center-icon {
+      transform: scale(1.1);
+      background: var(--accent);
+      color: #fff;
+    }
+    .robocar-play-tag {
+      margin-top: 14px;
+      font-family: var(--font-racing);
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 3;
+      transition: all 0.25s ease;
+    }
+    .card:hover .robocar-play-tag {
+      background: rgba(255, 0, 0, 0.85);
+      border-color: #ff0000;
+      box-shadow: 0 4px 16px rgba(255, 0, 0, 0.5);
+    }
+
   </style>
 </head>
 <body>
@@ -2141,7 +2516,8 @@
       <!-- Checkpoint Sector Markers -->
       <a href="#hero" class="f1-rail-marker active" data-sector="PIT EXIT" title="Hero"><span>HERO</span></a>
       <a href="#about" class="f1-rail-marker" data-sector="PROFILE" title="About"><span>ABOUT</span></a>
-      <a href="#experience" class="f1-rail-marker" data-sector="RACING EXP" title="Experience"><span>EXP</span></a>
+      <a href="#experience" class="f1-rail-marker" data-sector="EXPERIENCE" title="Experience"><span>EXP</span></a>
+      <a href="#education" class="f1-rail-marker" data-sector="EDUCATION" title="Education"><span>EDU</span></a>
       <a href="#projects" class="f1-rail-marker" data-sector="CAD VAULT" title="Projects"><span>CAD</span></a>
       <a href="#skills" class="f1-rail-marker" data-sector="TELEMETRY" title="Skillset"><span>SKILLS</span></a>
       <a href="#achievements" class="f1-rail-marker" data-sector="PODIUM" title="Achievements"><span>PODIUM</span></a>
@@ -2177,11 +2553,13 @@
     <div class="nav-links">
       <a href="#about"><i data-lucide="user"></i> About</a>
       <a href="#experience"><i data-lucide="briefcase"></i> Experience</a>
+      <a href="#education"><i data-lucide="graduation-cap"></i> Education</a>
       <a href="#projects"><i data-lucide="layers"></i> Projects</a>
       <a href="#skills"><i data-lucide="cpu"></i> Skillset</a>
       <a href="#achievements"><i data-lucide="trophy"></i> Achievements</a>
       <a href="#publications"><i data-lucide="file-text"></i> Publications</a>
       <a href="#contact" class="nav-cta"><i data-lucide="send"></i> Connect</a>
+      <a href="Aarya Resume.pdf" download="Aarya_Sanjay_Sawant_Resume.pdf" class="nav-resume-btn" target="_blank" title="Download Official Resume PDF"><i data-lucide="download"></i> Resume</a>
     </div>
   </nav>
 
@@ -2206,6 +2584,9 @@
       <div class="hero-actions">
         <a href="#projects" class="btn-f1-primary">
           <i data-lucide="gauge"></i> <span>View Telemetry & CAD</span>
+        </a>
+        <a href="Aarya Resume.pdf" download="Aarya_Sanjay_Sawant_Resume.pdf" class="btn-f1-outline" target="_blank">
+          <i data-lucide="file-down"></i> <span>Download Resume (PDF)</span>
         </a>
         <a href="#contact" class="btn-f1-secondary">
           <i data-lucide="mail"></i> <span>Direct Contact</span>
@@ -2308,55 +2689,17 @@
     </div>
   </div>
 
-  <!-- EXPERIENCE & EDUCATION -->
+  <!-- EXPERIENCE SECTION -->
   <section id="experience">
     <div class="section-header">
-      <div class="section-telemetry-tag">CAREER STAGES & RACING HISTORY</div>
-      <h2><em>Experience</em> & Education</h2>
+      <div class="section-telemetry-tag">CAREER STAGES & TRACK RECORD</div>
+      <h2><em>Professional</em> Experience</h2>
       <div class="section-divider"></div>
     </div>
     
     <div class="timeline">
       
-      <!-- Stage 1 -->
-      <div class="timeline-card">
-        <div class="timeline-node"></div>
-        <div class="timeline-box">
-          <div class="timeline-header">
-            <h4>B.E. in Mechanical Engineering</h4>
-            <div class="timeline-date-badge">
-              <i data-lucide="calendar"></i> Aug 2023 - Present
-            </div>
-          </div>
-          <div class="timeline-role">
-            <i data-lucide="graduation-cap"></i> Fr. Conceicao Rodrigues College of Engineering
-          </div>
-          <p>
-            Developing a deep core foundation in structural mechanics, thermodynamic cycles, and kinematic analysis while actively organizing and volunteering at the international hackathon Bit N Build.
-          </p>
-        </div>
-      </div>
-
-      <!-- Stage 2 -->
-      <div class="timeline-card">
-        <div class="timeline-node"></div>
-        <div class="timeline-box">
-          <div class="timeline-header">
-            <h4>Member of Braking and Transmission</h4>
-            <div class="timeline-date-badge">
-              <i data-lucide="calendar"></i> Aug 2024 - Mar 2025
-            </div>
-          </div>
-          <div class="timeline-role">
-            <i data-lucide="wrench"></i> Team Abadha CRCE (BAJA SAE INDIA 2025)
-          </div>
-          <p>
-            Leveraged SolidWorks, ANSYS Mechanical, and Fusion 360 to engineer, simulate, and physically manufacture braking calipers and multi-body transmission systems under rigorous competitive automotive racing requirements.
-          </p>
-        </div>
-      </div>
-
-      <!-- Stage 3 -->
+      <!-- Stage 1: Cosy Farms -->
       <div class="timeline-card">
         <div class="timeline-node"></div>
         <div class="timeline-box">
@@ -2370,17 +2713,36 @@
             <i data-lucide="building-2"></i> Cosy Farms
           </div>
           <p>
-            Bridged digital hardware design and field execution by converting technical drawings into precise 3D SolidWorks models, managing FDM printing, auditing quality control, and executing structural optimizations guided by complex CFD profiles.
+            Implemented Engineering Graphics by converting technical hand drawings into precise 3D SolidWorks models, managing comprehensive industrial procurement and executing FDM 3D printing. Demonstrated success in bridging the gap between hardware design and field execution by conducting rigorous quality control audits, analyzing complex CFD profiles and implementing customized structural fixes to optimize controlled-environment agricultural systems.
           </p>
         </div>
       </div>
-      
-      <!-- Stage 4 -->
+
+      <!-- Stage 2: Team Abadha CRCE -->
       <div class="timeline-card">
         <div class="timeline-node"></div>
         <div class="timeline-box">
           <div class="timeline-header">
-            <h4>Engineering Intern</h4>
+            <h4>Member of Braking and Transmission</h4>
+            <div class="timeline-date-badge">
+              <i data-lucide="calendar"></i> Aug 2024 - Mar 2025
+            </div>
+          </div>
+          <div class="timeline-role">
+            <i data-lucide="wrench"></i> Team Abadha CRCE (BAJA SAE INDIA 2025)
+          </div>
+          <p>
+            Implemented SolidWorks, Ansys and Fusion 360 to design and analyze braking and transmission systems for Team Abadha CRCE at BAJA SAE INDIA 2025, gaining hands-on ATV experience while developing precision, composure under pressure and effective decision-making.
+          </p>
+        </div>
+      </div>
+
+      <!-- Stage 3: Usher Exim -->
+      <div class="timeline-card">
+        <div class="timeline-node"></div>
+        <div class="timeline-box">
+          <div class="timeline-header">
+            <h4>Intern</h4>
             <div class="timeline-date-badge">
               <i data-lucide="calendar"></i> May 2023 - Aug 2023
             </div>
@@ -2389,7 +2751,66 @@
             <i data-lucide="briefcase"></i> Usher Exim
           </div>
           <p>
-            Strengthened technical data management capabilities in Excel and mastered regulatory application processes via DGFT, Icegate Portal, and comprehensive export compliance documentation.
+            Amplified my Excel skills and learnt several application processes of DGFT, Icegate Portal and more export related documentation.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education">
+    <div class="section-header">
+      <div class="section-telemetry-tag">ACADEMIC FOUNDATION & DEGREES</div>
+      <h2>Academic <span>Education</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="education-grid">
+      
+      <!-- College 1: FRCRCE -->
+      <div class="education-card">
+        <div class="education-card-top">
+          <div>
+            <div class="education-date-badge">
+              <i data-lucide="calendar"></i> Aug 2023 - Present
+            </div>
+            <h3 class="education-degree">B.E. in Mechanical Engineering</h3>
+          </div>
+        </div>
+        <div class="education-institute">
+          <i data-lucide="graduation-cap"></i> Fr. Conceicao Rodrigues College of Engineering
+        </div>
+        <div class="education-body">
+          <div class="education-activity-tag">
+            <i data-lucide="award"></i> Activities & Achievements
+          </div>
+          <p class="education-activity-text">
+            Volunteered at the international hackathon <strong>Bit N Build</strong> as a Content Writer. Developing high-level competency in finite element analysis, computational fluid dynamics, machine design, and motorsport powertrain engineering.
+          </p>
+        </div>
+      </div>
+
+      <!-- College 2: Sathaye College -->
+      <div class="education-card">
+        <div class="education-card-top">
+          <div>
+            <div class="education-date-badge">
+              <i data-lucide="calendar"></i> Jun 2021 - Mar 2023
+            </div>
+            <h3 class="education-degree">Higher Secondary Certificate (HSC)</h3>
+          </div>
+        </div>
+        <div class="education-institute">
+          <i data-lucide="school"></i> Sathaye College
+        </div>
+        <div class="education-body">
+          <div class="education-activity-tag">
+            <i data-lucide="medal"></i> Activities & Achievements
+          </div>
+          <p class="education-activity-text">
+            Achieved <strong>Gold Medal in Maths and English Olympiad</strong>. Built strong mathematical foundations in calculus, vector mechanics, kinematics, and applied physical sciences.
           </p>
         </div>
       </div>
@@ -2408,13 +2829,16 @@
     <!-- Telemetry Filter Tabs -->
     <div class="project-filter-bar">
       <button class="filter-btn active" onclick="filterProjects('all')">
-        <i data-lucide="layers"></i> All Telemetry (3)
+        <i data-lucide="layers"></i> All Projects (4)
       </button>
       <button class="filter-btn" onclick="filterProjects('baja')">
         <i data-lucide="car"></i> Automotive & SAE
       </button>
       <button class="filter-btn" onclick="filterProjects('fea')">
         <i data-lucide="activity"></i> Thermal & FEA
+      </button>
+      <button class="filter-btn" onclick="filterProjects('robotics')">
+        <i data-lucide="bot"></i> Robotics & Arduino
       </button>
       <button class="filter-btn" onclick="filterProjects('ergonomics')">
         <i data-lucide="hand"></i> Ergonomics & CAD
@@ -2423,52 +2847,53 @@
 
     <div class="grid" id="projects-grid">
       
-      <!-- Project 1 -->
+      <!-- Project 1: Brake Calliper Assembly Design -->
       <div class="card" data-category="baja fea">
-        <div class="cad-viewport" onclick="openLightbox('brake-calliper-assembly-design.png', 'Brake Calliper Assembly Design', 'SYS: BAJA SAE 2025 • MESH: 184,200 NODES • GD&T: ±0.015mm')">
+        <div class="cad-viewport" onclick="openLightbox('brake-calliper-assembly-design.png', 'Brake Calliper Assembly Design', 'BAJA SAE INDIA 2025 • FEA VALIDATED • GD&T TOLERANCE ANALYSIS')">
           <div class="cad-grid"></div>
           <div class="cad-telemetry-header">
             <span class="cad-status-tag"><i data-lucide="check-circle-2"></i> FEA VALIDATED</span>
-            <span>GD&T: ±0.015mm</span>
+            <span>GD&T & TOLERANCE ANALYSIS</span>
           </div>
           <div class="cad-footer-coords">
-            <span>SYS: BAJA SAE 2025</span>
-            <span>MESH: 184,200 NODES</span>
+            <span>SYS: BAJA SAE INDIA 2025</span>
+            <span>MFG DRAWINGS: GENERATED</span>
           </div>
           <img src="brake-calliper-assembly-design.png" alt="Brake Calliper Assembly Design" class="project-img-preview" onerror="this.style.display='none'">
           <div class="cad-inspect-badge"><i data-lucide="maximize-2"></i> FULL CAD BLUEPRINT</div>
         </div>
 
         <div class="card-body">
-          <span class="project-num"><i data-lucide="cpu"></i> Telemetry / 01</span>
-          <h3>Brake Calliper Assembly Design</h3>
+          <span class="project-num"><i data-lucide="cpu"></i> Project / 01</span>
+          <h3>Brake Calliper Assembly Design (BAJA SAE INDIA, 2025)</h3>
           <p>
-            Engineered a complete parametric assembly for BAJA SAE INDIA 2025. Performed full FEA structural analysis for extreme stopping loads and generated detailed manufacturing drawings with strict GD&T tolerancing.
+            • Designed a part parametric assembly with FEA validation.<br>
+            • Generated manufacturing drawings with GD&T and tolerance analysis.
           </p>
           <div class="project-links">
-            <a href="https://drive.google.com/drive/folders/1IUn2xnKE07HgXZakteMD4Yj7AT4qRPZJ" target="_blank">
+            <a href="https://drive.google.com/drive/folders/1IUn2xnKE07HgXZakteMD4Yj7AT4qRPZJ?usp=sharing" target="_blank">
               <i data-lucide="external-link"></i> CAD Drive Repository ↗
             </a>
           </div>
           <div class="tags">
             <span class="tag"><i data-lucide="tag"></i> SolidWorks</span>
             <span class="tag"><i data-lucide="tag"></i> ANSYS</span>
-            <span class="tag"><i data-lucide="tag"></i> Structural FEA</span>
+            <span class="tag"><i data-lucide="tag"></i> 3D Printing</span>
             <span class="tag"><i data-lucide="tag"></i> GD&T</span>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 -->
+      <!-- Project 2: Transmission Gearbox Housing Prototype -->
       <div class="card" data-category="baja fea">
         <div class="cad-viewport" id="gearbox-viewport" onclick="openCurrentGearboxLightbox()">
           <div class="cad-grid"></div>
           <div class="cad-telemetry-header">
-            <span class="cad-status-tag"><i data-lucide="check-circle-2"></i> THERMAL FEA PASSED</span>
-            <span>FITMENT: ZERO-CLASH</span>
+            <span class="cad-status-tag"><i data-lucide="check-circle-2"></i> THERMAL FEA VALIDATED</span>
+            <span>INTERFERENCE: ZERO-CLASH</span>
           </div>
           <div class="cad-footer-coords">
-            <span id="gearbox-telemetry-left">INTERFERENCE: RESOLVED</span>
+            <span id="gearbox-telemetry-left">INTERFERENCE ANALYSIS: RESOLVED</span>
             <span id="gearbox-telemetry-right">PROTOTYPE: FDM PRINTED</span>
           </div>
           <img src="transmission-gearbox-housing-fea.png" alt="Transmission Gearbox Housing - FEA Stress Analysis" class="project-img-preview" id="gearbox-img-fea" onerror="this.style.display='none'">
@@ -2481,31 +2906,81 @@
         </div>
 
         <div class="card-body">
-          <span class="project-num"><i data-lucide="cpu"></i> Telemetry / 02</span>
-          <h3>Transmission Gearbox Housing</h3>
+          <span class="project-num"><i data-lucide="cpu"></i> Project / 02</span>
+          <h3>Transmission Gearbox Housing Prototype (BAJA SAE INDIA, 2025)</h3>
           <p>
-            Engineered a multi-body gearbox housing featuring interference analysis for precise gear mesh. Executed thermal FEA under maximum operational friction and 3D printed a 1:1 functional prototype for physical fitment testing.
+            • Designed multi-body housing with interference analysis for gear fitment.<br>
+            • Performed thermal FEA ensuring operation under high loads.<br>
+            • 3D printed and post-processed functional prototype for validation testing.
           </p>
           <div class="project-links">
-            <a href="https://drive.google.com/drive/folders/1Qj9ivjr5qBsepabFvuQFg4c9M08WpcA3" target="_blank">
+            <a href="https://drive.google.com/drive/folders/1Qj9ivjr5qBsepabFvuQFg4c9M08WpcA3?usp=drive_link" target="_blank">
               <i data-lucide="external-link"></i> CAD Drive #1 ↗
             </a>
-            <a href="https://drive.google.com/drive/folders/1pmL15xZAg3g0AaqZweYaSm7Gcrn-L4EA" target="_blank">
+            <a href="https://drive.google.com/drive/folders/1pmL15xZAg3g0AaqZweYaSm7Gcrn-L4EA?usp=drive_link" target="_blank">
               <i data-lucide="external-link"></i> CAD Drive #2 ↗
             </a>
           </div>
           <div class="tags">
-            <span class="tag"><i data-lucide="tag"></i> SolidWorks</span>
             <span class="tag"><i data-lucide="tag"></i> Fusion 360</span>
-            <span class="tag"><i data-lucide="tag"></i> Thermal FEA</span>
+            <span class="tag"><i data-lucide="tag"></i> ANSYS</span>
             <span class="tag"><i data-lucide="tag"></i> FDM Printing</span>
+            <span class="tag"><i data-lucide="tag"></i> Thermal FEA</span>
           </div>
         </div>
       </div>
 
-      <!-- Project 3 -->
-      <div class="card" data-category="fea ergonomics">
-        <div class="cad-viewport" onclick="openLightbox('train-handle-ergonomic-redesign.png', 'Train Handle Ergonomic Redesign', 'METHOD: HOUSE OF QUALITY • CONCEPTS: 3 ITERATIONS • ERGONOMICS: OPTIMIZED')">
+      <!-- Project 3: ESP32 Autonomous Robocar -->
+      <div class="card" data-category="robotics fea">
+        <div class="cad-viewport" onclick="window.open('https://youtube.com/shorts/Y9sDKk9sYPA', '_blank')" style="cursor: pointer;">
+          <div class="cad-grid"></div>
+          <div class="cad-telemetry-header">
+            <span class="cad-status-tag"><i data-lucide="check-circle-2"></i> CHASSIS 3D PRINTED</span>
+            <span>ULTRASONIC SENSOR: ACTIVE</span>
+          </div>
+          <div class="cad-footer-coords">
+            <span>SYS: ESP32 ROBOTICS 2026</span>
+            <span>OBSTACLE AVOIDANCE: ON</span>
+          </div>
+          
+          <div class="robocar-viewport-bg">
+            <div class="robocar-radar-ring"></div>
+            <div class="robocar-radar-pulse"></div>
+            <div class="robocar-center-icon">
+              <i data-lucide="bot" style="width: 28px; height: 28px;"></i>
+            </div>
+            <div class="robocar-play-tag">
+              <i data-lucide="play-circle" style="width: 16px; height: 16px; color: #ff3366;"></i> WATCH VIDEO DEMO
+            </div>
+          </div>
+          
+          <div class="cad-inspect-badge" style="opacity: 1; background: rgba(255, 0, 0, 0.95);"><i data-lucide="youtube"></i> YOUTUBE DEMO</div>
+        </div>
+
+        <div class="card-body">
+          <span class="project-num"><i data-lucide="cpu"></i> Project / 03</span>
+          <h3>ESP32 Autonomous Robocar (Mini-Project, 2026)</h3>
+          <p>
+            • Engineered 3D printable chassis with sensor integration for obstacle avoidance.<br>
+            • Integrated ultrasonic telemetry and microcontroller logic for real-time path deviation.
+          </p>
+          <div class="project-links">
+            <a href="https://youtube.com/shorts/Y9sDKk9sYPA" target="_blank" style="background: rgba(255, 0, 0, 0.12); border-color: rgba(255, 0, 0, 0.35); color: #ff5555;">
+              <i data-lucide="youtube"></i> Watch Demonstration (YouTube) ↗
+            </a>
+          </div>
+          <div class="tags">
+            <span class="tag"><i data-lucide="tag"></i> SolidWorks</span>
+            <span class="tag"><i data-lucide="tag"></i> Arduino</span>
+            <span class="tag"><i data-lucide="tag"></i> ESP32</span>
+            <span class="tag"><i data-lucide="tag"></i> 3D Printing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Train Handle Ergonomic Redesign -->
+      <div class="card" data-category="ergonomics fea">
+        <div class="cad-viewport" onclick="openLightbox('train-handle-ergonomic-redesign.png', 'Train Handle Ergonomic Redesign', 'PDD PROJECT 2026 • HOUSE OF QUALITY • 3 ERGONOMIC CONCEPTS')">
           <div class="cad-grid"></div>
           <div class="cad-telemetry-header">
             <span class="cad-status-tag"><i data-lucide="check-circle-2"></i> HOQ BENCHMARKED</span>
@@ -2520,16 +2995,17 @@
         </div>
 
         <div class="card-body">
-          <span class="project-num"><i data-lucide="cpu"></i> Telemetry / 03</span>
-          <h3>Train Handle Ergonomic Redesign</h3>
+          <span class="project-num"><i data-lucide="cpu"></i> Project / 04</span>
+          <h3>Train Handle Ergonomic Redesign (PDD Project, 2026)</h3>
           <p>
-            Conducted thorough commuter market surveying and competitive benchmarking to develop three distinct ergonomic transit handle concepts, engineered via the House of Quality methodology and structural ANSYS validation.
+            • Conducted market survey and competitive benchmarking.<br>
+            • Developed 3 ergonomic concepts using House of Quality methodology.
           </p>
           <div class="tags">
-            <span class="tag"><i data-lucide="tag"></i> Design Thinking</span>
             <span class="tag"><i data-lucide="tag"></i> SolidWorks</span>
-            <span class="tag"><i data-lucide="tag"></i> ANSYS</span>
-            <span class="tag"><i data-lucide="tag"></i> Product Development</span>
+            <span class="tag"><i data-lucide="tag"></i> Design Thinking</span>
+            <span class="tag"><i data-lucide="tag"></i> House of Quality</span>
+            <span class="tag"><i data-lucide="tag"></i> Ergonomics</span>
           </div>
         </div>
       </div>
@@ -2547,7 +3023,7 @@
 
     <div class="skills-wrapper">
       
-      <!-- Card 1 -->
+      <!-- Card 1: 3D CAD & Design -->
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-card-icon">
@@ -2558,24 +3034,24 @@
         <ul>
           <li>
             <span>SolidWorks (3D CAD, CAM)</span>
-            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Expert</span>
-          </li>
-          <li>
-            <span>AutoCAD (2D Drafting)</span>
             <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Advanced</span>
           </li>
           <li>
             <span>Autodesk Fusion 360</span>
-            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Advanced</span>
+            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Certified</span>
+          </li>
+          <li>
+            <span>AutoCAD (2D Drafting)</span>
+            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Proficient</span>
           </li>
           <li>
             <span>GD&T & Tolerance Analysis</span>
-            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Certified</span>
+            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Validated</span>
           </li>
         </ul>
       </div>
 
-      <!-- Card 2 -->
+      <!-- Card 2: CAE, FEA & CFD -->
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-card-icon">
@@ -2585,25 +3061,25 @@
         </div>
         <ul>
           <li>
-            <span>ANSYS Mechanical (FEA)</span>
-            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Proficient</span>
-          </li>
-          <li>
-            <span>Ansys Fluent (CFD Aero)</span>
+            <span>ANSYS Mechanical (Structural FEA)</span>
             <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Certified</span>
           </li>
           <li>
-            <span>Thermal Load Analysis</span>
+            <span>Ansys Fluent (CFD Flow Analysis)</span>
+            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Certified</span>
+          </li>
+          <li>
+            <span>Thermal Load & Stress Analysis</span>
             <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Tested</span>
           </li>
           <li>
-            <span>Mechanical Vibration Study</span>
+            <span>Mechanical Vibrations & Harmonics</span>
             <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Published</span>
           </li>
         </ul>
       </div>
 
-      <!-- Card 3 -->
+      <!-- Card 3: Prototyping & Manufacturing -->
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-card-icon">
@@ -2617,48 +3093,102 @@
             <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Active</span>
           </li>
           <li>
-            <span>Hardware Quality Control</span>
+            <span>Hardware Quality Control Audits</span>
             <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Audited</span>
           </li>
           <li>
-            <span>Kinematic Multi-Body Assembly</span>
-            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Validated</span>
-          </li>
-          <li>
-            <span>Mechatronics Integration</span>
+            <span>Arduino & Sensor Integration</span>
             <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Applied</span>
           </li>
+          <li>
+            <span>Mechatronics & Automation</span>
+            <span class="skill-status-tag"><i data-lucide="check-circle-2"></i> Certified</span>
+          </li>
         </ul>
       </div>
 
-      <!-- Card 4 -->
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-card-icon">
-            <i data-lucide="shield-check"></i>
+    </div>
+
+    <!-- DEDICATED VERIFIED CERTIFICATIONS -->
+    <div class="certifications-section-wrap">
+      <div class="certifications-title-row">
+        <h3><i data-lucide="shield-check" style="color: var(--accent);"></i> Verified Certifications & Licensure</h3>
+        <span class="cert-count-pill">5 Professional Credentials</span>
+      </div>
+
+      <div class="cert-cards-grid">
+        
+        <!-- Cert 1: edX SolidWorks -->
+        <div class="cert-tile">
+          <div>
+            <div class="cert-tile-header">
+              <span class="cert-issuer-badge"><i data-lucide="award"></i> edX Verified</span>
+            </div>
+            <h4 class="cert-tile-title">SOLIDWORKS CAD Fundamentals</h4>
+            <span class="cert-id-tag">Verified Professional Credential</span>
           </div>
-          <h3>Certifications</h3>
+          <a href="https://courses.edx.org/certificates/bc69325b553544929e18efb973122b04" target="_blank" class="cert-verify-btn">
+            <i data-lucide="external-link"></i> View Credentials ↗
+          </a>
         </div>
-        <ul>
-          <li>
-            <span>SOLIDWORKS CAD Fundamentals</span>
-            <span class="skill-status-tag"><i data-lucide="award"></i> edX</span>
-          </li>
-          <li>
-            <span>Proficiency in ANSYS</span>
-            <span class="skill-status-tag"><i data-lucide="award"></i> CADD</span>
-          </li>
-          <li>
-            <span>Essential in Ansys Fluent</span>
-            <span class="skill-status-tag"><i data-lucide="award"></i> CADD</span>
-          </li>
-          <li>
-            <span>Fundamentals of Mechatronics</span>
-            <span class="skill-status-tag"><i data-lucide="award"></i> Tata IIS</span>
-          </li>
-        </ul>
-      </div>
 
+        <!-- Cert 2: ANSYS CADD CENTRE -->
+        <div class="cert-tile">
+          <div>
+            <div class="cert-tile-header">
+              <span class="cert-issuer-badge"><i data-lucide="award"></i> CADD CENTRE</span>
+            </div>
+            <h4 class="cert-tile-title">Proficiency in ANSYS</h4>
+            <span class="cert-id-tag">Student ID: CO250619Z230206</span>
+          </div>
+          <a href="https://registry.caddcentre.com/ghbji.php?asdsad=WWxFZTZreG5PNDVvd0pBc1M2MStYN0RscDFoemRybDR2ZHpPUWJvdGlIQVJYN2dvbXNSekE5MkVoSWJhUEw3Mg==" target="_blank" class="cert-verify-btn">
+            <i data-lucide="external-link"></i> View Credentials ↗
+          </a>
+        </div>
+
+        <!-- Cert 3: Ansys Fluent CADD CENTRE -->
+        <div class="cert-tile">
+          <div>
+            <div class="cert-tile-header">
+              <span class="cert-issuer-badge"><i data-lucide="award"></i> CADD CENTRE</span>
+            </div>
+            <h4 class="cert-tile-title">Essential in Ansys Fluent</h4>
+            <span class="cert-id-tag">Student ID: CO250619Z230206</span>
+          </div>
+          <a href="https://registry.caddcentre.com/ghbji.php?asdsad=WWxFZTZreG5PNDVvd0pBc1M2MStYN0RscDFoemRybDR2ZHpPUWJvdGlIQVJYN2dvbXNSekE5MkVoSWJhUEw3Mg==" target="_blank" class="cert-verify-btn">
+            <i data-lucide="external-link"></i> View Credentials ↗
+          </a>
+        </div>
+
+        <!-- Cert 4: Autodesk Fusion 360 -->
+        <div class="cert-tile">
+          <div>
+            <div class="cert-tile-header">
+              <span class="cert-issuer-badge"><i data-lucide="award"></i> Autodesk</span>
+            </div>
+            <h4 class="cert-tile-title">Autodesk CAD/CAM/CAE using Fusion 360</h4>
+            <span class="cert-id-tag">Verified Professional Credential</span>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1kCAG5AMpsNpNJfz55rrKvhvzzI4CqHIn" target="_blank" class="cert-verify-btn">
+            <i data-lucide="external-link"></i> View Credentials ↗
+          </a>
+        </div>
+
+        <!-- Cert 5: Tata IISS Mechatronics -->
+        <div class="cert-tile">
+          <div>
+            <div class="cert-tile-header">
+              <span class="cert-issuer-badge"><i data-lucide="award"></i> Tata IISS</span>
+            </div>
+            <h4 class="cert-tile-title">Fundamentals of Mechatronics & Automation</h4>
+            <span class="cert-id-tag">Verified Professional Certification</span>
+          </div>
+          <div class="cert-verified-static">
+            <i data-lucide="check-circle-2"></i> Verified Credential
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -2672,36 +3202,47 @@
     
     <div class="achievements-grid">
       
-      <!-- Achievement 1 -->
+      <!-- Achievement 1: Olympiad Gold Medal -->
       <div class="achievement-card">
         <div class="achievement-icon">
-          <i data-lucide="trophy"></i>
+          <i data-lucide="medal"></i>
         </div>
-        <h4 class="achievement-title">Olympiad Gold Medals</h4>
+        <h4 class="achievement-title">Gold Medal in Maths & English Olympiad</h4>
         <p>
-          Awarded Gold Medals across Mathematics, Science, and English National Olympiads, establishing early analytical rigor, logic, and multidisciplinary problem-solving competence.
+          Awarded prestigious Gold Medals in Mathematics and English Olympiads at Sathaye College, validating exceptional quantitative aptitude, analytical reasoning, and precision.
         </p>
       </div>
 
-      <!-- Achievement 2 -->
+      <!-- Achievement 2: Bit N Build Hackathon -->
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i data-lucide="code-2"></i>
+        </div>
+        <h4 class="achievement-title">Bit N Build International Hackathon</h4>
+        <p>
+          Volunteered at the premier international hackathon <em>Bit N Build</em> at Fr. Conceicao Rodrigues College of Engineering as a dedicated Content Writer, coordinating communication and technical media.
+        </p>
+      </div>
+
+      <!-- Achievement 3: State-Level Chess -->
       <div class="achievement-card">
         <div class="achievement-icon">
           <i data-lucide="crosshair"></i>
         </div>
         <h4 class="achievement-title">State-Level Competitive Chess</h4>
         <p>
-          Represented the college team across diverse District and State Level Chess Competitions, honing high-stress strategic planning, foresight, and tactical adaptability.
+          Represented the college team across diverse District and State Level Chess Competitions, developing high-stress tactical planning, foresight, and decisive composure under pressure.
         </p>
       </div>
 
-      <!-- Achievement 3 -->
+      <!-- Achievement 4: Discipline Head & Best Student -->
       <div class="achievement-card">
         <div class="achievement-icon">
           <i data-lucide="crown"></i>
         </div>
         <h4 class="achievement-title">Discipline Head & Best Student</h4>
         <p>
-          Appointed Discipline Head of the institution, earned the prestigious Best Student Award, and claimed district and state accolades in Elocution, Mono-acting, and Western Dance.
+          Appointed Discipline Head of the institution and honored with the Best Student Award, alongside district and state accolades in public elocution and performing arts.
         </p>
       </div>
 
@@ -3025,8 +3566,8 @@
           if (hudSpeed) hudSpeed.textContent = Math.round(currentSpeed);
 
           // Active Sector Tracker
-          const sectionIds = ['hero', 'about', 'experience', 'projects', 'skills', 'achievements', 'contact'];
-          const sectorLabels = ['PIT EXIT', 'PROFILE', 'SAE BAJA', 'CAD VAULT', 'SKILLSET', 'PODIUM', 'CHECKERED'];
+          const sectionIds = ['hero', 'about', 'experience', 'education', 'projects', 'skills', 'achievements', 'publications', 'contact'];
+          const sectorLabels = ['PIT EXIT', 'PROFILE', 'EXPERIENCE', 'EDUCATION', 'CAD VAULT', 'SKILLSET', 'PODIUM', 'RESEARCH', 'CHECKERED'];
           let activeIndex = 0;
           sectionIds.forEach((id, idx) => {
             const el = document.getElementById(id);
