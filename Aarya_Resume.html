@@ -105,22 +105,34 @@
       overflow-x: hidden;
     }
 
-    /* NAVIGATION / PIT-WALL TOP BAR */
+    /* NAVIGATION / PIT-WALL TOP BAR — Sticky & Transparent on Hero, Solid on Scroll */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 5%;
       height: 60px;
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: rgba(7, 8, 10, 0.92);
+      left: 0;
+      right: 0;
+      width: 100%;
       z-index: 1000;
+      background: linear-gradient(180deg, rgba(7, 8, 10, 0.65) 0%, rgba(7, 8, 10, 0) 100%);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
+      transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+      gap: 16px;
+    }
+
+    nav.scrolled {
+      background: rgba(7, 8, 10, 0.94);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      transition: all 0.3s ease;
-      gap: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.65);
     }
 
     .nav-brand {
@@ -225,34 +237,67 @@
       color: #fff;
     }
 
-    /* CTA buttons in nav */
+    /* CTA CONNECT button in nav — Non-rectangle F1 Racing Skewed Shape (matching hero buttons) */
     .nav-cta {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-family: var(--font-racing);
+      font-size: 0.84rem;
+      font-weight: 800;
+      font-style: italic;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       white-space: nowrap;
-      background: linear-gradient(135deg, var(--ferrari-red), var(--ferrari-dark));
+      background: linear-gradient(135deg, #ff2800 0%, #d40000 60%, #990000 100%);
       color: #fff !important;
-      padding: 8px 16px !important;
-      border-radius: 2px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-left: 3px solid rgba(255, 255, 255, 0.7);
-      box-shadow: 0 3px 12px rgba(255, 40, 0, 0.3);
+      padding: 7px 18px 7px 14px !important;
+      border-radius: 0 !important;
+      transform: skewX(-14deg);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-left: 3.5px solid #ffffff;
+      box-shadow: 0 3px 14px rgba(255, 40, 0, 0.35);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
       flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-left: 8px;
+    }
+
+    .nav-cta > * {
+      transform: skewX(14deg);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -80%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+      transform: rotate(25deg);
+      pointer-events: none;
+    }
+
+    .nav-cta:hover::before {
+      left: 150%;
+      transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .nav-cta:hover {
-      background: linear-gradient(135deg, #ff4422, #cc1000);
-      box-shadow: 0 5px 18px rgba(255, 40, 0, 0.5);
+      background: linear-gradient(135deg, #ff3c1a 0%, #ff1801 60%, #b80000 100%);
+      box-shadow: 0 6px 22px rgba(255, 40, 0, 0.6);
       border-left-color: #ffdd00;
-      transform: translateY(-1px);
+      transform: skewX(-14deg) translateY(-2px);
+    }
+
+    .nav-cta:active {
+      transform: skewX(-14deg) translateY(1px);
     }
 
     .nav-cta::after { display: none !important; }
@@ -262,8 +307,9 @@
       padding: 110px 6%; 
       max-width: 1240px; 
       margin: 0 auto; 
-      position: relative;
+      position: relative; 
       z-index: 1;
+      scroll-margin-top: 60px;
     }
 
     .section-header {
@@ -2737,9 +2783,13 @@
       .mobile-menu-toggle {
         display: flex;
       }
+      nav.nav-drawer-open {
+        background: rgba(7, 8, 10, 0.98) !important;
+        border-bottom-color: var(--border) !important;
+      }
       .nav-links {
         position: fixed;
-        top: 65px;
+        top: 56px;
         left: 0;
         right: 0;
         background: rgba(7, 8, 10, 0.98);
@@ -2749,7 +2799,7 @@
         padding: 22px 6%;
         gap: 10px;
         display: none;
-        max-height: calc(100vh - 65px);
+        max-height: calc(100vh - 56px);
         overflow-y: auto;
         z-index: 999;
         box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
@@ -2763,11 +2813,17 @@
         width: 100%;
         font-size: 0.95rem;
       }
-      .nav-resume-btn {
-        margin-left: 0;
+      .nav-links a.nav-cta {
+        transform: none !important;
         justify-content: center;
         margin-top: 8px;
-        width: 100%;
+        margin-left: 0;
+        padding: 12px 20px !important;
+        border-radius: 4px !important;
+        border-left: 4px solid #fff;
+      }
+      .nav-links a.nav-cta > * {
+        transform: none !important;
       }
       .hero-actions {
         flex-direction: row;
@@ -3241,7 +3297,7 @@
       <a href="#skills"><i data-lucide="cpu"></i> Skillset</a>
       <a href="#achievements"><i data-lucide="trophy"></i> Achievements</a>
       <a href="#publications"><i data-lucide="file-text"></i> Publications</a>
-      <a href="#contact" class="nav-cta"><i data-lucide="send"></i> Connect</a>
+      <a href="#contact" class="nav-cta"><i data-lucide="send"></i> <span>Connect</span></a>
     </div>
   </nav>
 
@@ -4059,16 +4115,19 @@
     // Mobile Navigation Drawer Toggle
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const navLinksMenu = document.getElementById('nav-links');
+    const mainNav = document.getElementById('navbar');
     if (mobileToggle && navLinksMenu) {
       mobileToggle.addEventListener('click', () => {
         navLinksMenu.classList.toggle('active');
         const isOpen = navLinksMenu.classList.contains('active');
+        if (mainNav) mainNav.classList.toggle('nav-drawer-open', isOpen);
         mobileToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
         lucide.createIcons();
       });
       navLinksMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           navLinksMenu.classList.remove('active');
+          if (mainNav) mainNav.classList.remove('nav-drawer-open');
           mobileToggle.innerHTML = '<i data-lucide="menu"></i>';
           lucide.createIcons();
         });
@@ -4208,6 +4267,38 @@
 
       function onScrollEvent() {
         const scrollY = window.scrollY;
+
+        // Sticky Navbar: transparent on hero section, regular solid/blur pit-wall navbar on rest of site
+        const navEl = document.getElementById('navbar');
+        if (navEl) {
+          if (scrollY > 50) {
+            navEl.classList.add('scrolled');
+          } else {
+            navEl.classList.remove('scrolled');
+          }
+        }
+
+        // Active section indicator for easy site navigation
+        const navSections = ['about', 'experience', 'education', 'projects', 'skills', 'achievements', 'publications', 'contact'];
+        let activeSectionId = '';
+        for (const sId of navSections) {
+          const sEl = document.getElementById(sId);
+          if (sEl) {
+            const rect = sEl.getBoundingClientRect();
+            if (rect.top <= 140 && rect.bottom >= 140) {
+              activeSectionId = sId;
+              break;
+            }
+          }
+        }
+        document.querySelectorAll('#nav-links a:not(.nav-cta)').forEach(link => {
+          if (activeSectionId && link.getAttribute('href') === '#' + activeSectionId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
         const docH = document.documentElement.scrollHeight - window.innerHeight;
         targetPct = docH > 0 ? Math.max(0, Math.min(1, scrollY / docH)) : 0;
 
@@ -4235,6 +4326,8 @@
 
       window.addEventListener('scroll', onScrollEvent, { passive: true });
       window.addEventListener('resize', onScrollEvent);
+      // Run once immediately to set initial scroll and navbar states
+      onScrollEvent();
 
       // Silky Smooth Physics LERP Animation Loop (60/120fps)
       function physicsLoop() {
