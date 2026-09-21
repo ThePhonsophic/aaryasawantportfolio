@@ -91,6 +91,8 @@
     html { 
       scroll-behavior: smooth; 
       color-scheme: dark;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
     }
     
     body {
@@ -103,6 +105,17 @@
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    /* Hide default browser scrollbars completely */
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      width: 0px;
+      height: 0px;
+      background: transparent;
     }
 
     /* NAVIGATION / PIT-WALL TOP BAR — Sticky & Transparent on Hero, Solid on Scroll */
