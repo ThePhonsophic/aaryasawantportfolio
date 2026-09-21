@@ -1905,15 +1905,15 @@
       display: block;
     }
 
-    /* Telemetry HUD Tooltip - Positioned strictly to the left inside the viewport */
+    /* Telemetry HUD Tooltip - Appears to the LEFT of the rail, always inside viewport */
     .f1-car-hud {
-      position: absolute;
-      right: 44px;
+      position: fixed;
+      right: 56px;
       top: 0;
       background: rgba(10, 12, 16, 0.95);
       border: 1px solid rgba(255, 40, 0, 0.4);
       border-right: 3px solid var(--ferrari-red);
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
@@ -1925,7 +1925,8 @@
       transition: opacity 0.25s ease;
       white-space: nowrap;
       will-change: transform;
-      z-index: 12;
+      z-index: 1200;
+      min-width: 120px;
     }
 
     .f1-telemetry-rail:hover .f1-car-hud,
@@ -4163,9 +4164,12 @@
           // CAR REMAINS 100% STRICTLY STRAIGHT THROUGHOUT THE ENTIRE SCROLL
           car.style.transform = `translate3d(-50%, ${carY.toFixed(2)}px, 0) rotate(180deg)`;
 
-          // HUD tracks smoothly alongside the car, safely to the left inside the viewport
+          // HUD tracks the car using fixed viewport coordinates (HUD is position:fixed)
           if (hud) {
-            hud.style.transform = `translate3d(0, ${(carY + 4).toFixed(2)}px, 0)`;
+            const railRect = rail.getBoundingClientRect();
+            const hudTop = railRect.top + carY + 4;
+            hud.style.top = `${Math.max(70, Math.min(window.innerHeight - 100, hudTop)).toFixed(1)}px`;
+            hud.style.transform = 'none';
           }
 
           // Red progress line feeds directly into the car's rear diffuser
